@@ -1,0 +1,5 @@
+/* Impostare lo sfondo di colore rosso agli elementi con classe main */
+.main {
+    background-color: rgb(255, 0, 0);
+}
+
