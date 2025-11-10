@@ -3,3 +3,7 @@
     background-color: rgb(255, 0, 0);
 }
 
+/* Impostare il colore del testo di colore verde agli elementi con classe secondary */
+.secondary {
+    color: rgb(0, 255, 0);
+}
