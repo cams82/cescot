@@ -1,0 +1,15 @@
+#header {
+    background-color: red;
+}
+
+#main {
+    background-color: yellow;
+}
+
+.content {
+    color: blue;
+}
+
+.second-content {
+    color: green;
+}
