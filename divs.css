@@ -1,8 +1,8 @@
 /* impostare lo sfondo di colore rosso e blu per ogni div */
-div .grid-red {
+.grid-red {
     background-color: red;
 }
 
-div .grid-blue {
+.grid-blue {
     background-color: blue;
 }
