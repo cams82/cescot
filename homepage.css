@@ -1,0 +1,73 @@
+h1 {
+    color: blue;
+    background-color: lightsteelblue;
+    margin: 10px;
+    padding: 10px;
+}
+
+#Titolo-2 {
+    color: green;
+    background-color: lightgreen;
+    margin: 10px;
+    padding: 10px;
+}
+
+#Titolo-3 {
+    color: purple;
+    background-color: plum;
+    margin: 10px;
+    padding: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 20px;
+    text-align: justify;
+}
+
+h3 {
+    color: darkorange;
+    background-color: lightyellow;
+    margin: 10px;
+    padding: 10px;
+    text-size-adjust: 30px;
+}
+
+
+.testo-rosso {
+    color: red;
+    margin: 10px;
+    padding: 10px;
+    text-size-adjust: 20px;
+}
+
+button {
+    background-color: lightgray;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+footer {
+    background-color: #f1f1f1;
+    text-align: left;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+ul, ol {
+    margin: 20px;
+    padding: 10px;
+}
+
+#spazi {
+    color: goldenrod;
+}

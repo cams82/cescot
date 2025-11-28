@@ -1,0 +1,56 @@
+h1 {
+    color: blue;
+    background-color: lightsteelblue;
+    margin: 10px;
+    padding: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 20px;
+    text-align: justify;
+    background-color: rgb(247, 243, 239); 
+    opacity: 0.5;
+}
+
+.Titolo-2 {
+    font-size: 16px;
+    margin: 20px;
+    padding: 10px;
+    text-align: justify;
+}
+
+h2 {
+    color: darkcyan;
+    background-color: lightcyan;
+    margin: 10px;
+    padding: 10px;
+    text-size-adjust: 25px;
+}
+
+nav {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px;
+    padding: 10px;
+    background-color: lightcoral;
+    text-align: center;
+}
+
+.Servizi {
+    font-size: 16px;
+    margin: 20px;
+    padding: 10px;
+    text-align: justify;
+}
+
+img {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%; 
+    object-fit: cover; 
+    z-index: -1;
+}
+
