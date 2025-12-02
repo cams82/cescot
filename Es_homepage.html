@@ -98,13 +98,15 @@
       </aside>
     </div>
 
-    <!-- PAGES (simulate multiple landing pages) -->
+    <!-- main -->
     <main class="page">
 
       <section id="home" class="page active">
         <div class="card">
           <h2>Benvenuto su Landing Hub</h2>
-          <p style="color:var(--muted)">Questa demo mostra come organizzare una homepage moderna con un carosello di immagini, preview delle landing e pagine dedicate. Usa la navigazione in alto o i pulsanti "Apri" per spostarti tra le landing.</p>
+          <p style="color:var(--muted)">
+            Questa demo mostra come organizzare una homepage moderna con un carosello di immagini, preview delle landing e pagine dedicate.
+            Usa la navigazione in alto o i pulsanti "Apri" per spostarti tra le landing.</p>
         </div>
       </section>
 
@@ -114,8 +116,15 @@
             <h2>Landing — Product Launch</h2>
             <p style="color:var(--muted)">Perfetta per lanciare un nuovo prodotto: hero, benefici, testimonianze e pricing.</p>
             <ul class="features">
-              <li class="feature"><strong>Hero ottimizzato</strong><div style="color:var(--muted)">Forte value proposition e CTA.</div></li>
-              <li class="feature"><strong>Features chiare</strong><div style="color:var(--muted)">Elenca cosa risolve il prodotto.</div></li>
+              <li class="feature"><strong>Hero ottimizzato</strong>
+                <div style="color:var(--muted)">
+                  <p>
+                    Forte value proposition e CTA.
+                  </p>
+                </div>
+              </li>
+              <li class="feature"><strong>Features chiare</strong>
+                <div style="color:var(--muted)">Elenca cosa risolve il prodotto.</div></li>
               <li class="feature"><strong>Pricing</strong><div style="color:var(--muted)">Piani e confronto semplice.</div></li>
             </ul>
             <p style="margin-top:18px"><a class="cta" href="#contact" data-target="contact">Contattaci</a></p>
@@ -129,7 +138,7 @@
           <div class="lp-hero">
             <div class="text">
               <h2>Landing — Agency</h2>
-              <p style="color:var(--muted)">Case study, team e contatti per attirare clienti enterprise.</p>
+              <p class="par-mute">Case study, team e contatti per attirare clienti enterprise.</p>
               <div class="features">
                 <div class="feature"><strong>Portfolio</strong><div style="color:var(--muted)">Galleria dei progetti migliori.</div></div>
                 <div class="feature"><strong>Team</strong><div style="color:var(--muted)">Presenta i membri chiave.</div></div>
@@ -160,7 +169,7 @@
       <section id="contact" class="page">
         <div class="card">
           <h2>Contatti</h2>
-          <p style="color:var(--muted)">Scrivici una mail o compila il form per una demo.</p>
+          <p class="par-mute">Scrivici una mail o compila il form per una demo.</p>
           <form onsubmit="event.preventDefault();alert('Grazie! Questo è un demo.');" style="display:grid;gap:10px;max-width:560px">
             <input required placeholder="Nome" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
             <input required type="email" placeholder="Email" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
