@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Landing Hub — Esempio di Homepage</title>
+  <meta name="description" content="Esempio di homepage moderna con logo, carosello immagini e più landing page in un unico file HTML/CSS.">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#6ee7b7;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --maxw:1200px;
+      --shadow: 0 6px 20px rgba(2,6,23,0.6);
+      --ff: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:var(--ff);background:linear-gradient(180deg,#020617 0%, #071026 100%);color:#e6eef6}
+    a{color:var(--accent);text-decoration:none}
+
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{display:inline-grid;place-items:center;width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);box-shadow:var(--shadow)}
+    .logo svg{width:36px;height:36px}
+    .brand h1{font-size:18px;margin:0}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{padding:8px 12px;border-radius:10px;color:#cfeaf0;font-weight:600}
+    nav a.active{background:var(--glass);backdrop-filter:blur(6px)}
+
+    /* Hero / Carousel */
+    .hero{margin-top:18px;display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    .carousel{position:relative;overflow:hidden;border-radius:12px;height:380px}
+    .slides{display:flex;transition:transform 600ms cubic-bezier(.22,.9,.3,1);height:100%}
+    .slide{min-width:100%;height:100%;background-size:cover;background-position:center;display:flex;align-items:end;padding:18px}
+    .slide .caption{background:linear-gradient(180deg, transparent, rgba(0,0,0,0.45));padding:12px;border-radius:8px;color:#fff}
+    .controls{position:absolute;left:12px;right:12px;top:50%;transform:translateY(-50%);display:flex;justify-content:space-between}
+    .btn{background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:#fff;backdrop-filter:blur(4px);cursor:pointer}
+
+    .thumbs{display:flex;gap:8px;margin-top:12px}
+    .thumbs button{border:1px solid rgba(255,255,255,0.04);padding:6px;border-radius:8px;overflow:hidden;width:84px;height:56px}
+    .thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Landing previews */
+    .landing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .landing{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015))}
+    .landing h3{margin:0 0 8px 0}
+    .landing p{margin:0 0 12px 0;color:var(--muted)}
+    .cta{display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#042022;font-weight:700}
+
+    /* Page sections (simulated landing pages) */
+    main.page{margin-top:22px}
+    section.page{display:none;padding:28px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));box-shadow:var(--shadow)}
+    section.page.active{display:block}
+    .lp-hero{display:flex;gap:30px;align-items:center}
+    .lp-hero .text{flex:1}
+    .lp-hero img{width:420px;border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,0.6)}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .feature{padding:16px;border-radius:12px;background:var(--glass)}
+
+    footer{margin-top:28px;padding:18px;border-radius:12px;text-align:center;color:var(--muted)}
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .lp-hero{flex-direction:column}
+      .landing-grid{grid-template-columns:repeat(2,1fr)}
+      .features{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      nav{display:none}
+      .brand p{display:none}
+      .landing-grid{grid-template-columns:1fr}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>
+          <!-- simple SVG logo -->
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="52" height="52" rx="10" fill="white" opacity="0.08"/>
+            <path d="M18 36C22 28 42 22 46 30C50 38 30 44 26 36C22 28 26 30 18 36Z" fill="white"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Landing Hub</h1>
+          <p>Design responsivo • Hero • Carosello</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#home" class="nav-link active" data-target="home">Home</a>
+        <a href="#lp1" class="nav-link" data-target="lp1">Landing 1</a>
+        <a href="#lp2" class="nav-link" data-target="lp2">Landing 2</a>
+        <a href="#lp3" class="nav-link" data-target="lp3">Landing 3</a>
+        <a href="#contact" class="nav-link" data-target="contact">Contatti</a>
+      </nav>
+    </header>
+
+    <!-- HERO + CAROUSEL -->
+    <div class="hero">
+      <div class="card">
+        <div class="carousel" id="mainCarousel" aria-roledescription="carousel">
+          <div class="slides">
+            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=60')">
+              <div class="caption">
+                <h2>Design pulito, conversioni alte</h2>
+                <p>Template modulare per lanciare prodotti e servizi in pochi minuti.</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=60')">
+              <div class="caption">
+                <h2>Team creativo a portata di click</h2>
+                <p>Collabora con designer e sviluppatori per costruire la tua pagina.</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1600&q=60')">
+              <div class="caption">
+                <h2>Velocità e accessibilità</h2>
+                <p>Ottimizzato per prestazioni e SEO on-page.</p>
+              </div>
+            </div>
+          </div>
+          <div class="controls">
+            <button class="btn" id="prev">◀</button>
+            <button class="btn" id="next">▶</button>
+          </div>
+        </div>
+
+        <div class="thumbs" id="thumbs">
+          <button data-index="0"><img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=400&q=60" alt="Team al lavoro"></button>
+          <button data-index="1"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=60" alt="Progettazione digitale"></button>
+          <button data-index="2"><img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=400&q=60" alt="Prestazioni e codice"></button>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3>Scopri le landing</h3>
+        <p class="muted">Anteprime rapide per tre stili diversi. Clicca per aprire la landing completa.</p>
+
+        <div class="landing-grid">
+          <article class="landing">
+            <h3>Product</h3>
+            <p>Lancio prodotto con hero, lista benefici e pricing.</p>
+            <a class="cta" data-target="lp1">Apri</a>
+          </article>
+          <article class="landing">
+            <h3>Agency</h3>
+            <p>Portfolio, case study e contatti per agenzie creative.</p>
+            <a class="cta" data-target="lp2">Apri</a>
+          </article>
+
+          <article class="landing">
+            <h3>App</h3>
+            <p>Landing per app mobile: store badge e video dimostrativo.</p>
+            <a class="cta" data-target="lp3">Apri</a>
+          </article>
+        </div>
+
+      </aside>
+    </div>
+
+    <!-- PAGES (simulate multiple landing pages) -->
+    <main class="page">
+
+      <section id="home" class="page active">
+        <div class="card">
+          <h2>Benvenuto su Landing Hub</h2>
+          <p style="color:var(--muted)">Questa demo mostra come organizzare una homepage moderna con un carosello di immagini, preview delle landing e pagine dedicate. Usa la navigazione in alto o i pulsanti "Apri" per spostarti tra le landing.</p>
+        </div>
+      </section>
+
+      <section id="lp1" class="page">
+        <div class="lp-hero card">
+          <div class="text">
+            <h2>Landing — Product Launch</h2>
+            <p style="color:var(--muted)">Perfetta per lanciare un nuovo prodotto: hero, benefici, testimonianze e pricing.</p>
+            <ul class="features">
+              <li class="feature"><strong>Hero ottimizzato</strong><div style="color:var(--muted)">Forte value proposition e CTA.</div></li>
+              <li class="feature"><strong>Features chiare</strong><div style="color:var(--muted)">Elenca cosa risolve il prodotto.</div></li>
+              <li class="feature"><strong>Pricing</strong><div style="color:var(--muted)">Piani e confronto semplice.</div></li>
+            </ul>
+            <p style="margin-top:18px"><a class="cta" href="#contact" data-target="contact">Contattaci</a></p>
+          </div>
+          <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1000&q=60" alt="Product showcase">
+        </div>
+      </section>
+
+      <section id="lp2" class="page">
+        <div class="card">
+          <div class="lp-hero">
+            <div class="text">
+              <h2>Landing — Agency</h2>
+              <p style="color:var(--muted)">Case study, team e contatti per attirare clienti enterprise.</p>
+              <div class="features">
+                <div class="feature"><strong>Portfolio</strong><div style="color:var(--muted)">Galleria dei progetti migliori.</div></div>
+                <div class="feature"><strong>Team</strong><div style="color:var(--muted)">Presenta i membri chiave.</div></div>
+                <div class="feature"><strong>Call</strong><div style="color:var(--muted)">Calendly o form integrato.</div></div>
+              </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=1000&q=60" alt="Agency team">
+          </div>
+        </div>
+      </section>
+
+      <section id="lp3" class="page">
+        <div class="card">
+          <div class="lp-hero">
+            <div class="text">
+              <h2>Landing — App</h2>
+              <p style="color:var(--muted)">Breve descrizione, screenshot, e download badge per App Store / Play Store.</p>
+              <div style="margin-top:12px">
+                <img src="https://via.placeholder.com/140x44?text=App+Store" alt="App Store badge" style="margin-right:8px">
+                <img src="https://via.placeholder.com/140x44?text=Google+Play" alt="Google Play badge">
+              </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=60" alt="Mobile app">
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="page">
+        <div class="card">
+          <h2>Contatti</h2>
+          <p style="color:var(--muted)">Scrivici una mail o compila il form per una demo.</p>
+          <form onsubmit="event.preventDefault();alert('Grazie! Questo è un demo.');" style="display:grid;gap:10px;max-width:560px">
+            <input required placeholder="Nome" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+            <input required type="email" placeholder="Email" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+            <textarea required placeholder="Messaggio" rows="4" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+            <button class="cta" type="submit">Invia</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> Landing Hub — Template demo • Realizzato con ❤️
+    </footer>
+  </div>
+
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple carousel
+    (function(){
+      const slides = document.querySelector('.slides');
+      const slideCount = document.querySelectorAll('.slide').length;
+      let idx = 0;
+      let running = false;
+      function go(i){
+        idx = (i + slideCount) % slideCount;
+        slides.style.transform = translateX(-${idx*100}%);
+        document.querySelectorAll('#thumbs button').forEach(b => b.classList.toggle('active', +b.dataset.index===idx));
+      }
+      document.getElementById('prev').addEventListener('click', ()=>go(idx-1));
+      document.getElementById('next').addEventListener('click', ()=>go(idx+1));
+      document.querySelectorAll('#thumbs button').forEach(b=>b.addEventListener('click', ()=>go(+b.dataset.index)));
+
+      // auto-play
+      let timer = setInterval(()=>go(idx+1), 5000);
+      // pause on hover
+      document.getElementById('mainCarousel').addEventListener('mouseenter', ()=>clearInterval(timer));
+      document.getElementById('mainCarousel').addEventListener('mouseleave', ()=>timer = setInterval(()=>go(idx+1),5000));
+
+      go(0);
+    })();
+
+    // navigation between "pages" using data-target attributes and hash
+    (function(){
+      const links = document.querySelectorAll('[data-target]');
+      const pages = document.querySelectorAll('section.page');
+
+      function show(name){
+        pages.forEach(p=>p.classList.toggle('active', p.id===name));
+        document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active', a.dataset.target===name));
+        // update hash without scrolling
+        history.replaceState(null, '', '#'+name);
+      }
+
+      links.forEach(l=>l.addEventListener('click', e=>{e.preventDefault(); const t = l.dataset.target; show(t); }));
+
+      // on load, show hash if present
+      const initial = location.hash ? location.hash.replace('#','') : 'home';
+      if(document.getElementById(initial)) show(initial); else show('home');
+
+    })();
+  </script>
+</body>
+</html>
