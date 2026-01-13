@@ -1,0 +1,8 @@
+select cl.nome, cl.cognome, p.tipo_struttura, c.citta
+from clienti cl
+join citta c on c.id_citta = cl.citta 
+join prenotazioni p on p.cliente = cl.id_cliente
+where cl.citta in ('Bologna', 'Roma', 'Milano')
+and p.tipo_struttura in ('3 stelle', '4 stelle'); 
+
+  
